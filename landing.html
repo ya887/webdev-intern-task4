@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Netflix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png" />
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header>
+      <div class="netflixLogo">
+        <a id="logo" href="#home"><img src="img/logo.PNG" alt="Logo Image"></a>
+      </div>      
+      <nav class="main-nav">                
+        <a href="#home">Home</a>
+        <a href="#tvShows">TV Shows</a>
+        <a href="#movies">Movies</a>
+        <a href="#originals">Originals</a>
+        <a href="#recentlyAdded">Recently Added</a>
+        <a href="#myList">My List</a>        
+      </nav>
+      <!-- SUB NAVIGATION -->
+      
+    <nav class="sub-nav">
+      <input type="text" id="searchInput" placeholder="Search..." oninput="search()">
+      <!-- <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+      <a href="#">Account</a>         -->
+  </nav>
+  
+    
+    </header>
+    <!-- END OF HEADER -->
+    
+    <!-- MAIN CONTAINER -->
+    <section class="main-container" >
+      <div class="location" id="home">
+          <h1 id="home">Popular on Netflix</h1>
+          <div class="box">
+            <a href="description.html?content=movie1&title=The+Road+trick" data-title="The Road trick"><img src="img/p1.PNG" alt="" data-content-id="movie1"></a>
+            <a href="description.html?content=movie2&title=wynonna" data-title="wynonna" ><img src="img/p2.PNG" alt="" data-content-id="movie2"></a>
+            <a href="description.html?content=movie3&title=club+of+cuervos+:+the+ballad+of+hugo+sanchez" data-title="club of cuervos" ><img src="img/p3.PNG" alt="" data-content-id="movie3"></a>
+            <a href="description.html?content=movie4&title=grey's+anatomy" data-title="grey's anatomy" ><img src="img/p4.PNG" alt="" data-content-id="movie4"></a>
+            <a href="description.html?content=movie5&title=step+up+2+the+step+up+series" data-title="step up 2" ><img src="img/p5.PNG" alt="" data-content-id="movie5"></a>
+            <a href="description.html?content=movie6&title=lquid+seience" data-title="lquid science" ><img src="img/p6.PNG" alt="" data-content-id="movie6"></a>
+    
+            <a href="description.html?content=movie7&title=13+reason+why+?" data-title="13 reason why" ><img src="img/p7.PNG" alt="" data-content-id="movie7"></a>
+            <a href="description.html?content=movie8&title=the+staircase" data-title="staircase" ><img src="img/p8.PNG" alt="" data-content-id="movie8"></a>
+            <a href="description.html?content=movie9&title=the+vietnam+war" data-title="the vietnam war" ><img src="img/p9.PNG" alt="" data-content-id="movie9"></a>
+            <a href="description.html?content=movie10&title=the+covenant" data-title="the covenant" ><img src="img/p10.PNG" alt="" data-content-id="movie10"></a>
+            <a href="description.html?content=movie11&title=maecalla" data-title="maecella" ><img src="img/p11.PNG" alt="" data-content-id="movie11"></a>
+            <a href="description.html?content=movie12&title=riverdale" data-title="riverdale" ><img src="img/p12.PNG" alt="" data-content-id="movie12"></a>        
+          </div>
+      </div>
+      
+
+      <h1 id="myList">Trending Now</h1>
+      <div class="box">
+        <a href="description.html?content=movie13&title=luke+cage" data-title="luke cage" ><img src="img/p13.PNG" alt="" data-content-id="movie13"></a>
+       
+        <a href="description.html?content=movie15&title=tep+up+3+the+step+up+series" data-title="step up 2" ><img src="img/p15.PNG" alt="" data-content-id="movie15"></a>
+        <a href="description.html?content=movie16&title=club+of+cuervos+:+the+ballad+of+hugo+sanchez" data-title="club of cuervos" ><img src="img/p16.PNG" alt="" data-content-id="movie16"></a>
+        <a href="description.html?content=movie17&title=the+kissing+booth" data-title="the kissing booth" ><img src="img/p17.PNG" alt="" data-content-id="movie17"></a>
+        <a href="description.html?content=movie18&title=the+night+shift" data-title="the night shift" ><img src="img/p18.PNG" alt="" data-content-id="movie18"></a>                  
+        <a href="description.html?content=movie14&title=the+ranch" data-title="the ranch" ><img src="img/p14.PNG" alt="" data-content-id="movie14"></a>
+      </div>
+      
+      <h1 id="tvShows">TV Shows</h1>
+      <div class="box">
+        <a href="description.html?content=show1&title=hawaii+five-0" data-title="hawaii five-o"><img src="img/tv1.PNG" alt="" data-content-id="show1"></a>
+        <a href="description.html?content=show2&title=luke+cage" data-title="luke cage"><img src="img/tv2.PNG" alt="" data-content-id="show2"></a>
+        <a href="description.html?content=show3&title=the+flash" data-title="the flash"><img src="img/tv3.PNG" alt="" data-content-id="show3"></a>
+        <a href="description.html?content=show4&title=black+lightning" data-title="black lightning"><img src="img/tv4.PNG" alt="" data-content-id="show4"></a>
+        <a href="description.html?content=show5&title=new+girl" data-title="new girl"><img src="img/tv5.PNG" alt="" data-content-id="show5"></a>
+        <a href="description.html?content=show6&title=dc's+legend+of+tomorrow" data-title="dc's legend of tomorrow"><img src="img/tv6.PNG" alt="" data-content-id="show6"></a>
+
+        <a href="description.html?content=show7&title=agent+of+s.h.i.e.l.d." data-title="agents of s.h.i.e.ld."><img src="img/tv7.PNG" alt="" data-content-id="show7"></a>
+        <a href="description.html?content=show8&title=marlon" data-title="marlon"><img src="img/tv8.PNG" alt="" data-content-id="show8"></a>
+        <a href="description.html?content=show9&title=cooking+on+high" data-title="cooking on high"><img src="img/tv9.PNG" alt="" data-content-id="show9"></a>
+        <a href="description.html?content=show10&title=queer+eye" data-title="queer eye"><img src="img/tv10.PNG" alt="" data-content-id="show10"></a>
+        <a href="description.html?content=show11&title=shooter" data-title="shooter"><img src="img/tv11.PNG" alt="" data-content-id="show11"></a>
+        <a href="description.html?content=show12&title=jessica+jones" data-title="jessica jones"><img src="img/tv12.PNG" alt="" data-content-id="show12"></a>              
+      </div>
+      
+
+      <h1 id="movies">Blockbuster Action & Adventure</h1>
+      <div class="box">
+        <a href="description.html?content=movie19&title=wanted" data-title="wanted" ><img src="img/p19.PNG" alt="" data-content-id="movie19"></a>
+        <a href="description.html?content=movie20&title=the+bourne+ultimatum" data-title=" the bourne ultimatum" ><img src="img/p20.PNG" alt="" data-content-id="movie20"></a>
+        <a href="description.html?content=movie21&title=marvel+studio+guaedians+of+the+galaxy" data-title="marvel studio guardians of the galaxy" ><img src="img/p21.PNG" alt="" data-content-id="movie21"></a>
+        <a href="description.html?content=movie22&title=national+treasure" data-title="national treasure" ><img src="img/p22.PNG" alt="" data-content-id="movie22"></a>
+        <a href="description.html?content=movie23&title=bad+boys" data-title="bad boys" ><img src="img/p23.PNG" alt="" data-content-id="movie23"></a>
+        <a href="description.html?content=movie24&title=bright" data-title="bright" ><img src="img/p24.PNG" alt="" data-content-id="movie24"></a>                
+      </div>
+
+      <h1 id="originals">Netflix Originals</h1>
+      <div class="box">
+        <a href="description.html?content=show13&title=cooking+on+high" data-title="cooking on high"><img src="img/tv13.PNG" alt="" data-content-id="show13"></a>
+        <a href="description.html?content=show14&title=queer+eye" data-title="queer eye"><img src="img/tv14.PNG" alt="" data-content-id="show14"></a>
+        <a href="description.html?content=show15&title=jessica+jones" data-title="jessica jones"><img src="img/tv15.PNG" alt="" data-content-id="show15"></a>
+        <a href="description.html?content=show16&title=brain+on+fire" data-title="brain on fire "><img src="img/tv16.PNG" alt="" data-content-id="show16"></a>
+        <a href="description.html?content=show17&title=the+kissing+booth" data-title="the kissing booth"><img src="img/tv17.PNG" alt="" data-content-id="show17"></a>
+        <a href="description.html?content=show18&title=arrested+development" data-title="arrested development"><img src="img/tv18.PNG" alt="" data-content-id="show18"></a>                
+      </div>
+
+      <h1 id="recentlyAdded">Recently Added</h1>
+      <div class="box">
+        <a href="description.html?content=movie25&title=lost+in+space" data-title="lost in space" ><img src="img/p25.PNG" alt="" data-content-id="movie25"></a>
+        <a href="description.html?content=movie26&title=queen+of+the+south" data-title="queen of the south" ><img src="img/p26.PNG" alt="" data-content-id="movie26"></a>
+        <a href="description.html?content=movie27&title=undercover+boss" data-title="undercover boss" ><img src="img/p27.PNG" alt="" data-content-id="movie27"></a>
+        <a href="description.html?content=movie28&title=penny+dreadful" data-title="penny dreadful" ><img src="img/p28.PNG" alt="" data-content-id="movie28"></a>
+        <a href="description.html?content=movie29&title=money+hiest" data-title="money hiest" ><img src="img/p29.PNG" alt="" data-content-id="movie29"></a>
+        <a href="description.html?content=movie30&title=the+week+of" data-title="the week of" ><img src="img/p30.PNG" alt="" data-content-id="movie30"></a>                
+      </div>
+    </section>
+    <!-- END OF MAIN CONTAINER -->
+
+    <!-- LINKS -->
+    <section class="link">
+      <div class="logos">
+        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+      </div>
+      <div class="sub-links">
+        <ul>
+          <li><a href="#">Audio and Subtitles</a></li>
+          <li><a href="#">Audio Description</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- END OF LINKS -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy 1997-2024 Netflix, Inc.</p>
+        <p> &copy 2024</p>
+    </footer>
+  </div>
+
+
+  <script>
+function search() {
+  // Get the input value
+  var input = document.getElementById("searchInput").value.toLowerCase();
+
+  // Get all the images
+  var images = document.querySelectorAll(".box img");
+
+  // Loop through each image to check if its title matches the search input
+  images.forEach(function (image) {
+    var titleText = image.parentElement.getAttribute("data-title").toLowerCase();
+    if (titleText.includes(input)) {
+      // Show the image if its title matches the search input
+      image.parentElement.style.display = "inline-block";
+    } else {
+      // Hide the image if its title doesn't match the search input
+      image.parentElement.style.display = "none";
+    }
+  });
+
+  // Reset the display style of the wrapper
+  var wrapper = document.querySelector(".wrapper");
+  wrapper.style.display = "block";
+}
+
+    </script>
+    
+</body>
+</html>

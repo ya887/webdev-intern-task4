@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="netflixLogo">
+        <a id="logo" href="#home"><img src="img/logo.PNG" alt="Logo Image"></a>
+      </div>
+      <nav class="main-nav">
+        <a href="landing.html">Home</a>
+        <a href="landing.html#tvShows">TV Shows</a>
+        <a href="landing.html#movies">Movies</a>
+        <a href="landing.html#originals">Originals</a>
+        <a href="landing.html#recentlyAdded">Recently Added</a>
+        <a href="landing.html#myList">My List</a>
+      </nav>
+      <nav class="sub-nav">
+        <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Description Container -->
+    <section class="description-container">
+      <!-- Movie/Show Details -->
+      <div class="details" id="detail-content">
+        <!-- Dynamic content will be inserted here based on query parameter -->
+        <h1>Loading...</h1>
+
+      </div>
+    </section>
+    <!-- End of Description Container -->
+
+    <section class="link">
+      <div class="logos">
+        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+      </div>
+      <div class="sub-links">
+        <ul>
+          <li><a href="#">Audio and Subtitles</a></li>
+          <li><a href="#">Audio Description</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- END OF LINKS -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy 1997-2024 Netflix, Inc.</p>
+        <p> &copy 2024</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the query parameters from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const contentId = urlParams.get('content');
+      const title = urlParams.get('title');
+
+      // Fetch content details based on contentId
+      const contentDetails = getContentDetails(contentId);
+
+      // Define content descriptions and trailers
+      const descriptions = {
+        "movie1": "Magician Adam Trent has spent years wowing audiences at his stage shows. Now, he wants to hit the road and see how his magic can connect with people on a more personal level. The journey he takes will amaze both himself and the people he encounters.",
+        "movie2": "Based on the IDW Comic, Wynonna Earp follows Wyatt Earp's great granddaughter as she battles demons and other creatures. With her unique abilities, and a posse of dysfunctional allies, she's the only thing that can bring the paranormal to justice. After years away, Wynonna Earp has traveled back to her home town of Purgatory to reluctantly take on the role destined for Wyatt Earp's heir: Demon protector. Her enemy: Revenants, the resurrected (and twisted) souls of the criminals Wyatt Earp once took down. Using only her wits and her wit, Wynonna, along with sister Waverely, associate Agent Dolls and Wyatt's cursed-with-immortality-best-friend Doc Holliday, must try to stop the Revenants from taking over the town - and escaping into the world. Wynonna Earp stars Melanie Scrofano (Supernatural, Being Erica, and Robocop), Tim Rozonm, Shamier Anderson, and Dominique Provost-Chalkey.",
+        "movie3": "When the patriarch of a prominent family dies, his heirs battle to determine who will gain control of his beloved soccer team: The Cuervos of Nuevo Toledo. Egos, tempers and soccer balls fly as the director, producers and star of Nosotros los Nobles reunite to bring this even crazier family to life.",
+        "movie4": "The doctors of Grey Sloan Memorial Hospital deal with life-or-death consequences on a daily basis-it's in one another that they find comfort, friendship and, at times, more than friendship. Together they're discovering that neither medicine nor relationships can be defined in black and white. Real life only comes in shades of grey. Subscribe to tvpromosdb on Youtube for more Grey's Anatomy season 20 promos in HD!",
+        "movie5": "When rebellious street dancer Andie (Briana Evigan) enrolls at the prestigious Maryland School of the Arts, she finds it difficult to adapt. Joining forces with Chase (Robert Hoffman), the hottest dancer at the school, she finds a way to merge her old life and the new by forming a team of misfit classmates and training with them to compete in an underground dance contest known as The Streets.",
+        "movie6": "The doctors of Grey Sloan Memorial Hospital deal with life-or-death consequences on a daily basis-it's in one another that they find comfort, friendship and, at times, more than friendship. Together they're discovering that neither medicine nor relationships can be defined in black and white. Real life only comes in shades of grey.",
+        "movie7": "Based on the best-selling books by Jay Asher, 13 Reasons Why follows teenager Clay Jensen as he returns home from school to find a mysterious box with his name on it lying on his porch. Inside he discovers cassette tapes recorded by Hannah Baker—his classmate and crush—who tragically committed suicide two weeks earlier. On tape, Hannah explains that there are thirteen reasons why she decided to end her life. Will Clay be one of them? If he listens, he’ll find out how he made the list. Through Hannah and Clay’s dual narratives, 13 Reasons Why weaves an intricate and heart wrenching story of teenage life that will deeply affect viewers.",
+        "movie8": "On December 9th, 2001, Kathleen Peterson was found dead at the bottom of a staircase. Did he do it? Watch The Staircase, now streaming on Netflix.",
+        "movie9": "Filmmakers Ken Burns & Lynn Novick direct an epic 10-part series: THE VIETNAM WAR. Ten years in the making, the landmark documentary comes to PBS this fall – Sun, September 17, 2017.",
+        "movie10": "Four young men who belong to a New England supernatural legacy are forced to battle a fifth power long thought to have died out. Meanwhile, jealousy and suspicion threaten to tear them apart.",
+        "movie11": "After taking a career break to raise her children, Detective Sergeant Marcella Backland (Anna Friel, Pushing Daisies) rejoins the London Metropolitan Police following the abrupt end of her marriage. She jumps right into one of her old cases when a serial murderer known as the Grove Park Killer seemingly resurfaces.But as Marcella dives deeper into the Grove Park case, the devastating changes to her personal life leave her in a fragile state. Struggling to cope, she experiences blackouts and extreme rage. When someone close to her ex-husband (Nicholas Pinnock, Fortitude) is murdered, Marcella fears she may have been involved.  From internationally renowned screenwriter Hans Rosenfeldt (The Bridge), Marcella is “a fiendish puzzle…crafted to keep viewers guessing” (The Independent, UK). The fantastic cast also includes Laura Carmichael (Downton Abbey), Jamie Bamber (Battlestar Galactica), Maeve Dermody (And Then There Were None), Nina Sosanya (Love Actually), Ray Panthaki (Convenience), Sinéad Cusack (Eastern Promises), and Harry Lloyd (Game of Thrones).",
+        "movie12": "While navigating the troubled waters of sex, romance, school and family, teen Archie and his gang become entangled in a dark Riverdale mystery. New episodes weekly, starting from January 27th.",
+        "movie13": "After a sabotaged experiment leaves him with super strength and unbreakable skin, Luke Cage (Mike Colter) becomes a fugitive who attempts to rebuild his life in modern day Harlem, New York City. But soon he is pulled out of the shadows and must fight a battle for the heart of his city – forcing him to confront a past he had tried to bury.",
+        "movie14": "Set in the present day on a Colorado ranch, THE RANCH stars Ashton Kutcher as Colt, a failed semi-pro football player who returns home to run the family ranching business with his older brother Jameson  (Danny Masterson) and father Beau (Sam Elliott), whom he hasn't seen in 15 years. Debra Winger stars as Colt's and Rooster's mother, Maggie, who runs the local town bar.  Don Reo (Two and Half Men, My Wife and Kids) and Jim Patterson (Two and a Half Men, Mike and Molly) executive produce. Kutcher and Masterson also serve as executive producers.",
+        "movie15": "When rebellious street dancer Andie (Briana Evigan) enrolls at the prestigious Maryland School of the Arts, she finds it difficult to adapt. Joining forces with Chase (Robert Hoffman), the hottest dancer at the school, she finds a way to merge her old life and the new by forming a team of misfit classmates and training with them to compete in an underground dance contest known as The Streets.",
+        "movie16": "When the patriarch of a prominent family dies, his heirs battle to determine who will gain control of his beloved soccer team: The Cuervos of Nuevo Toledo. Egos, tempers and soccer balls fly as the director, producers and star of Nosotros los Nobles reunite to bring this even crazier family to life.",
+        "movie17": "A pretty, teenage girl, who has never been kissed, finds her life turned totally upside down when she decides to run a kissing booth and unexpectedly ends up locking lips with her secret crush",
+        "movie18": "Welcome to the night shift, where the toughest and craziest cases always seem to come through the door. Every shift is a fight between the heroic efforts of saving lives and the hard truths of running an underfunded hospital.At San Antonio Memorial, the men and women who work the night shift are an irreverent and special breed, particularly adrenaline junkie TC Callahan (Eoin Macken). After three grueling tours of duty in Afghanistan, TC is about to learn that his toughest battles will be fought right here at home.",
+        "movie19": " Directed by Timur Bekmambetov and starring James McAvoy, Morgan Freeman, Terence Stamp, Thomas Kretschmann, Common. Doormat Wesley Gibson discovers that his recently murdered father -- who Wesley never knew -- belonged to a secret guild of assassins. After a leather-clad sexpot drafts Wesley into the society, he hones his innate killing skills and turns avenger.",
+        "movie20": " Directed by Paul Greengrass and starring Matt Damon Julia Stiles David Strathairn Scott Glenn and Paddy Considine Bourne is once again brought out of hiding by reporter Simon Ross who is trying to unveil Operation Blackbriar an upgrade to Project Treadstone in a series of newspaper columns.Information from the reporter stirs a new set of memories, and Bourne must finally uncover his dark past whilst dodging The Company's best efforts to eradicate him.",
+        "movie21": "From Marvel, the studio that brought you the global blockbuster franchises of Iron Man, Thor, Captain America and The Avengers, comes a new team-the Guardians of the Galaxy. An action-packed, epic space adventure, Marvel's 'Guardians of the Galaxy' expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt after stealing a mysterious orb coveted by Ronan, a powerful villain with ambitions that threaten the entire universe. To evade the ever-persistent Ronan, Quill is forced into an uneasy truce with a quartet of disparate misfits-Rocket, a gun-toting raccoon, Groot, a tree-like humanoid, the deadly and enigmatic Gamora and the revenge-driven Drax the Destroyer. But when Quill discovers the true power of the orb and the menace it poses to the cosmos, he must do his best to rally his ragtag rivals for a last, desperate stand-with the galaxy's fate in the balance.",
+        "movie22": "Starring: Nicolas Cage, Diane Kruger, Justin Bartha, Sean Beandirected By: Jon Turteltaub Synopsis: A historian races to find the legendary Templar Treasure before a team of mercenaries.",
+        "movie23": "Former video director Michael Bay had his first big hit with this action comedy, which also returned producers Jerry Bruckheimer and Don Simpson to the big-budget, high-violence movies that they successfully churned out in the '80s. Mike Lowrey (Will Smith) and Marcus Burnett (Martin Lawrence) are two Miami cops who watch as 100 million dollars in heroin, from the biggest drug bust of their careers, is stolen out of the basement of police headquarters. This puts them hot on the trail of French drug lord Fouchet (Tchéky Karyo), who leaves a trail of bodies in his wake and only one witness, Julie Mott (Téa Leoni), who quickly teams up with our heroes. Comic hijinks ensue when plot complications force Mike to impersonate the married Marcus, to the point of moving in with his wife and children, while Marcus takes over Mike's bachelor pad and lifestyle. Car chases, snappy one-liners, and nonstop pacing fuel this umpteenth variation on the cop  formula. CBFC Rating A . Certificate Number 3010",
+        "movie24": "Set in an alternate present-day where humans, orcs, elves, and fairies have been co-existing since the beginning of time. Bright is genre-bending action movie that follows two cops from very different backgrounds. Ward (Will Smith) and Jakoby (Joel Edgerton), embark on a routine patrol night and encounter a darkness that will ultimately alter the future and their world as they know it. Bright is available only on Netflix this December. Bright is directed by David Ayer (Training Day, End of Watch, Suicide Squad) stars Will Smith (Men in Black), Joel Edgerton (The Great Gatsby), Noomi Rapace (The Girl with the Dragon Tattoo), Lucy Fry (11.22.63), Edgar Ramirez (Hands of Stone, Zero Dark Thirty), Margaret Cho (Drop Dead Diva), and Ike Barinholtz (Suicide Squad). The movie is written by Max Landis (Chronicle) and produced by Ayer, Eric Newman (Narcos) and Bryan Unkeless (The Hunger Games).",
+        "movie25": "The Robinson family, part of a highly trained mission to establish a new colony in space, is unexpectedly pulled off course forcing them to crash land on a lost planet. Danger will find them. Lost in Space is now streaming on Netflix.",
+        "movie26": "QUEEN OF THE SOUTH tells the powerful story of Teresa Mendoza (Alice Braga). When her drug-dealing boyfriend is unexpectedly murdered in Mexico, Teresa is forced to go on the run and seek refuge in America, where she teams with an unlikely figure from her past to bring down the leader of the very drug trafficking ring that has her on the run.  In the process, she learns the tools of the trade and strategically positions herself to become the leader of the Cartel. Subscribe to tvpromosdb on Youtube for more Queen of the South season 1 promos in HD!",
+        "movie27": "Undercover Boss Takes Cinnabon President Kat Cole through Journey inside Franchise and Distribution Channels; New Episode of Emmy Award-Winning CBS Reality Series to be broadcast Friday, Nov. 16",
+        "movie28": "An erotically-charged, profoundly unsettling new saga, PENNY DREADFUL completely reinvents literature's most iconic and terrifying characters. Dorian Gray, Victor Frankenstein and timeless figures from Dracula join a core of original characters in a dark and brutal quest to save a soul -- even as they grapple with their own monstrous temptations",
+        "movie29": "What started as a heist became a global phenomenon. Stream all episodes of Money Heist, only on Netflix.",
+        "movie30": "The Week Of tells the story of a devoted, middle class father (Adam Sandler) determined to pay for his daughter's wedding despite the prodding of the wealthier father of the groom (Chris Rock).  A series of calamities forces the dads (and their families) to come together and endure the longest week of their lives.",
+
+
+
+        "show1": "",
+        "show2": "After a sabotaged experiment leaves him with super strength and unbreakable skin, Luke Cage (Mike Colter) becomes a fugitive who attempts to rebuild his life in modern day Harlem, New York City. But soon he is pulled out of the shadows and must fight a battle for the heart of his city – forcing him to confront a past he had tried to bury.",
+        "show3": "Worlds collide in “The Flash” when Barry uses his superpowers to travel back in time in order to change the events of the past. But when his attempt to save his family inadvertently alters the future, Barry becomes trapped in a reality in which General Zod has returned, threatening annihilation, and there are no Super Heroes to turn to. That is, unless Barry can coax a very different Batman out of retirement and rescue an imprisoned Kryptonian… albeit not the one he looking for. Ultimately, to save the world that he is in and return to the future that he knows, Barrys only hope is to race for his life. But will making the ultimate sacrifice be enough to reset the universe?",
+        "show4": "Get your first look at the CW's latest DC Comics adaptation, in this story of a retired superhero who returns to action.",
+        "show5": "- After a bad break-up, Jess, an offbeat young woman, moves into an apartment loft with three single men. Although they find her behavior very unusual, the men support her - most of the time.",
+        "show6": "The CW, DC’s Legends of Tomorrow stars Caity Lotz, Tala Ashe, Jes Macallan, Olivia Swann, Adam Tsekhman, Shayan Sobhian, Lisseth Chavez, Amy Louise Pemberton, with Nick Zano, and Dominic Purcell. Special appearances by Matt Ryan. Produced by Berlanti Productions in association with Warner Bros. Television, DC’s Legends of Tomorrow is based on the characters from DC and has been renewed for a seventh season. Executive producers for season six are Greg Berlanti, Phil Klemmer, Sarah Schechter, Keto Shimizu, Grainne Godfree, and James Eagan.",
+        "show7": "Clark Gregg reprises his role of Agent Phil Coulson from Marvel's feature films as he assembles a small, highly select group of Agents from the worldwide law-enforcement organization known as S.H.I.E.L.D. Together they investigate the new, the strange, and the unknown across the globe, protecting the ordinary from the extraordinary. Coulson's team consists of Agent Grant Ward (Brett Dalton), highly trained in combat and espionage, Agent Melinda May (Ming-Na Wen) expert pilot and martial artist, Agent Leo Fitz (Iain De Caestecker); brilliant engineer and Agent Jemma Simmons (Elizabeth Henstridge) genius bio-chemist. Joining them on their journey into mystery is new recruit and computer hacker Skye (Chloe Bennet).",
+        "show8": "Marlon Wayans, Essence Atkins, Bresha Webb and Diallo Riddle share a sneak peek of the fun coming up on Season 2 of Marlon, premiering Thursday, June 14 at 9/8c on NBC. Subscribe to tvpromosdb on Youtube for more Marlon season 2 promos in HD",
+        "show9": "Food, community, culture, resiliency. Based on Jessica B. Harris’ award-winning book, High On The Hog traces the moving story of a people's survival and triumph via the food that has knit generations together and helped define the American kitchen. From Gumbo to fried chicken, our culinary journey stretches from Africa to enslavement, to the Harlem Renaissance, up to our present-day; we celebrate the courage, artistry, and resourcefulness of the African American people. This is not just an African American story; it’s an American story. A feast for all the senses. ",
+        "show10": "With a new Fab 5 and some very tough missions, the Emmy-winning show is back and ready to make America fabulous again ... one makeover at a time.",
+        "show11": "Synopsis: A marksman living in exile is coaxed back into action after learning of a plot to kill the President. Ultimately double-crossed and framed for the attempt, he goes on the run to find the real killer and the reason he was set up.",
+        "show12": "After a tragic ending to her short-lived Super Hero stint, Jessica Jones is rebuilding her personal life and career as a private detective in Hell's Kitchen. It's time the world knew her name...",
+        "show13": "Food, community, culture, resiliency. Based on Jessica B. Harris’ award-winning book, High On The Hog traces the moving story of a people's survival and triumph via the food that has knit generations together and helped define the American kitchen. From Gumbo to fried chicken, our culinary journey stretches from Africa to enslavement, to the Harlem Renaissance, up to our present-day; we celebrate the courage, artistry, and resourcefulness of the African American people. This is not just an African American story; it’s an American story. A feast for all the senses. ",
+        "show14": "With a new Fab 5 and some very tough missions, the Emmy-winning show is back and ready to make America fabulous again ... one makeover at a time.",
+        "show15": "After a tragic ending to her short-lived Super Hero stint, Jessica Jones is rebuilding her personal life and career as a private detective in Hell's Kitchen. It's time the world knew her name...",
+        "show16": "A mysterious illness is devastating her body and mind, but she's determined to find answers. Brain on Fire premieres June 22 on Netflix.",
+        "show17": "A pretty, teenage girl, who has never been kissed, finds her life turned totally upside down when she decides to run a kissing booth and unexpectedly ends up locking lips with her secret crush",
+
+        "show18": "Jason Bateman, Portia de Rossi, Will Arnett, Michael Cera, Alia Shawkat, Tony Hale, David Cross, Jeffrey Tambor, Jessica Walter, Ron Howard",
+
+      };
+
+      const trailers = {
+        "movie1": "https://www.youtube.com/embed/fWhlnoAT_Ic",
+        "movie2": "https://www.youtube.com/embed/Ehg2LZw3FcU",
+        "movie3": "http://www.youtube.com/embed/9x3c8P3ooik",
+        "movie4": "http://www.youtube.com/embed/c_9S11SDi14",
+        "movie5": "http://www.youtube.com/embed/5CxCeZwZnfE",
+        "movie6": "http://www.youtube.com/embed/",
+        "movie7": "https://www.youtube.com/embed/0XuOkYlUWIs",
+        "movie8": "http://www.youtube.com/embed/Bvv97sCcruY",
+        "movie9": "http://www.youtube.com/embed/",
+        "movie10": "http://www.youtube.com/embed/sJkbm-a-T_U",
+        "movie11": "http://www.youtube.com/embed/2dz1ZGbi5M4",
+        "movie12": "http://www.youtube.com/embed/HxtLlByaYTc",
+        "movie13": "http://www.youtube.com/embed/ORa4hPhGrpo",
+        "movie14": "http://www.youtube.com/embed/epCvKyjH7g8",
+        "movie15": "http://www.youtube.com/embed/",
+        "movie16": "http://www.youtube.com/embed/9x3c8P3ooik",
+        "movie17": "http://www.youtube.com/embed/7bfS6seiLhk",
+        "movie18": "http://www.youtube.com/embed/2H0SfnB76GA",
+        "movie19": "http://www.youtube.com/embed/edpEspHOeVU",
+        "movie20": "http://www.youtube.com/embed/ZT2ZxjUjSo0",
+        "movie21": "http://www.youtube.com/embed/dW1BIid8Osg",
+        "movie22": "http://www.youtube.com/embed/vqUPxNT8io4",
+        "movie23": "http://www.youtube.com/embed/hRFY_Fesa9Q",
+        "movie24": "http://www.youtube.com/embed/6EZCBSsBxko",
+        "movie25": "http://www.youtube.com/embed/fzmM0AB60QQ",
+        "movie26": "http://www.youtube.com/embed/txqu2WoiqT8",
+        "movie27": "http://www.youtube.com/embed/b-kGRxj5JZQ",
+        "movie28": "http://www.youtube.com/embed/U0ZwCdc7eZw",
+        "movie29": "http://www.youtube.com/embed/_InqQJRqGW4",
+        "movie30": "http://www.youtube.com/embed/vc0fb3xhFHY",
+
+
+
+        "show1": "http://www.youtube.com/embed/K1_2Y4sIN5Q",
+        "show2": "http://www.youtube.com/embed/ORa4hPhGrpo",
+        "show3": "http://www.youtube.com/embed/jprhe-cWKGs",
+        "show4": "http://www.youtube.com/embed/3LAUGA01mUc",
+        "show5": "http://www.youtube.com/embed/KKFVKcDjel0",
+        "show6": "http://www.youtube.com/embed/GiEeOvLNFoE",
+        "show7": "http://www.youtube.com/embed/T3T-evQZiQo",
+        "show8": "http://www.youtube.com/embed/5c0XocOHE2k",
+        "show9": "http://www.youtube.com/embed/7wsEdxt1Ico",
+        "show10": "http://www.youtube.com/embed/GZMrivD2Aok",
+        "show11": "http://www.youtube.com/embed/i3A0ptNnC5s",
+        "show12": "http://www.youtube.com/embed/nWHUjuJ8zxE",
+        "show13": "http://www.youtube.com/embed/7wsEdxt1Ico",
+        "show14": "http://www.youtube.com/embed/GZMrivD2Aok",
+        "show15": "http://www.youtube.com/embed/nWHUjuJ8zxE",
+        "show16": "http://www.youtube.com/embed/VZn6G0M9wNs",
+        "show17": "http://www.youtube.com/embed/7bfS6seiLhk",
+        "show18": "http://www.youtube.com/embed/FvUeX_ROzNQ",
+
+      };
+
+      // Update the detail-content div with the fetched content details if available
+      const detailContent = document.getElementById('detail-content');
+      if (contentDetails) {
+        const description = descriptions[contentId] || "Description not available";
+        const trailerLink = trailers[contentId] || "Trailer not available";
+        detailContent.innerHTML = `
+      <h1 class="descriptionh">${title}</h1>
+      <img src="${contentDetails.poster}" class="descriptionimg" alt="Poster">
+      <p class="descriptionp">Description: ${description}</p>
+      <!-- Embed the trailer video -->
+      <iframe class=trailer src="${trailerLink}" frameborder="0" allowfullscreen></iframe>
+      <!-- Add more details as needed -->
+    `;
+      } else {
+        // Display a message if content details are not available
+        detailContent.innerHTML = `<p>Content details not available.</p>`;
+      }
+    });
+
+    // Function to fetch content details based on contentId
+    function getContentDetails(contentId) {
+      const movies = Array.from({ length: 30 }, (_, index) => ({
+        [`movie${index + 1}`]: {
+          title: `Movie ${index + 1}`,
+          poster: `img/p${index + 1}.PNG`,
+          description: `Description of Movie ${index + 1}.`,
+          trailer: `https://www.youtube.com/embed/movie${index + 1}-trailer`
+          // Add more details as needed
+        }
+      })).reduce((acc, obj) => ({ ...acc, ...obj }), {});
+
+      const shows = Array.from({ length: 18 }, (_, index) => ({
+        [`show${index + 1}`]: {
+          title: `Show ${index + 1}`,
+          poster: `img/tv${index + 1}.PNG`,
+          description: `Description of Show ${index + 1}.`,
+          trailer: `https://www.youtube.com/embed/show${index + 1}-trailer`
+          // Add more details as needed
+        }
+      })).reduce((acc, obj) => ({ ...acc, ...obj }), {});
+
+      const contentData = { ...movies, ...shows };
+
+      return contentData[contentId];
+    }
+
+  </script>
+
+
+</body>
+
+</html>
